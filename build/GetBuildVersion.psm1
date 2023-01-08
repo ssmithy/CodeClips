@@ -29,6 +29,6 @@ Function GetBuildVersion {
     if ($BuildRevision -ne 0) {
         $Version = $Version + '.' + [string]$BuildRevision
     }
-
+    Write-Host $Version
     return $Version
 }
