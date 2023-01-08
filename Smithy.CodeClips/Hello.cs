@@ -3,8 +3,5 @@
         public string World() {
             return "Hello, World!";
         }
-        public string World2() {
-            return "Hello, World2!";
-        }
     }
 }
