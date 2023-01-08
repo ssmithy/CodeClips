@@ -5,8 +5,6 @@ name: .NET CI/CD
 
 on:
   push:
-    tags:
-    - v*
     branches:
     - main
 
@@ -20,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Get Build Version
       run: |
@@ -32,13 +30,13 @@ jobs:
       shell: pwsh
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
+      uses: NuGet/setup-nuget@v1.1.x
 
     - name: Restore dependencies
       run: nuget restore $SOLUTION
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
 
