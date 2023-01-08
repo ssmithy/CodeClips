@@ -4,10 +4,15 @@
 name: .NET CI/CD
 
 on:
+  create:
+    branches: 
+      - release/**
   push:
-    branches: [ "master" ]
+    branches:
+    - master
   pull_request:
-    branches: [ "master" ]
+    branches:
+    - master
 
 jobs:
   build:
